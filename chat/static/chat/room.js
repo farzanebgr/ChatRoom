@@ -1,4 +1,3 @@
-
 console.log("Sanity check from room.js.");
 
 const roomName = JSON.parse(document.getElementById('roomName').textContent);
