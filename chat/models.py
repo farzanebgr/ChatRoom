@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-# Room Table in database...
+# Room Table in database / represents a chat room
 class Room(models.Model):
     name = models.CharField(max_length=128)
     online = models.ManyToManyField(to=User, blank=True)
@@ -26,7 +26,7 @@ class Room(models.Model):
 
 
 
-# Message Table in database...
+# Message Table in database / represents a message sent to the chat room
 class Message(models.Model):
     user = models.ForeignKey(to=User, on_delete=models.CASCADE)
     room = models.ForeignKey(to=Room, on_delete=models.CASCADE)
